@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    h1.my-4 Ahoy!
+    p Welcome to the sample backend for Verify Push, this sample has three endpoints:
+    ul
+        li
+            a(href="/enroll") Enroll QR Code: 
+            span Helps to generate a QR Code to be used with the Authy mobile application.
+        li
+            a(href="/challenge") Create Push Challenge: 
+            span Helps to create a Factor Push Challenge with custom details.
+        li
+            b /auth 
+            span A POST route to generate a JWT with the required payload to authenticate a request with the Verify API
+
+    h4 JWT Authentication Endpoint
+    div.mt-4
+        span.badge.badge-success.mr-3 POST
+        code /auth
+    div.mt-4
+        h5 Params
+        dl
+            dt identity
+            dd String. Entity identifier.
+            dt require_biometrics
+            dd Boolean. Sets if the new Factor must require a biometric authentication for approval or denial
+            

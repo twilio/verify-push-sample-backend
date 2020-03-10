@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -13,7 +14,10 @@
     "http-errors": "~1.6.3",
     "js-base64": "^2.5.2",
     "morgan": "~1.9.1",
+    "node-sass": "^4.13.1",
+    "node-sass-middleware": "^0.11.0",
     "pug": "2.0.0-beta11",
+    "qrcode": "^1.4.4",
     "twilio": "^3.40.0"
   }
 }
