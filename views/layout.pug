@@ -1,7 +1,27 @@
+include ./mixins/navbar.pug
+include ./mixins/form_control.pug
+
 doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', href='/images/Twilio_64.png')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+
+
+
   body
-    block content
+    +navbar_contained("Twilio", "navBar", "dark", "blue", "/")
+      +nav_item("/enroll")
+        = "Enroll"
+      +nav_item("/challenge")
+        = "Challenge"
+
+    .container
+      block content
+
+    if env.NODE_ENV === 'production'
+      script(src="https://cdn.jsdelivr.net/npm/vue@2.6.11")
+    else
+      script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    block scripts
