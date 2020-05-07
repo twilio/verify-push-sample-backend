@@ -14,7 +14,7 @@ router.get("/", function(req, res, next) {
 router.post("/", function(req, res, next) {
   const { identity, factor_sid, message, fields } = req.body;
 
-  const hashedIdentity = utils.generateSHA256(identity);
+  const hashedIdentity = config.HASH_IDENTITY ? utils.generateSHA256(identity) : identity;
 
   const authKey = config.TWILIO_ACCOUNT_SID;
   const authToken = config.TWILIO_AUTH_TOKEN;

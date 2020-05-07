@@ -45,6 +45,7 @@ You will need to create a Verify Service on the [Verify Service page](https://ww
 | Config Value                | Where to get one.                                                                                                      |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
 | `TWILIO_VERIFY_SERVICE_SID` | Generate one in the [Verify Console](https://www.twilio.com/console/verify/services) and put this in your `.env` file. |
+| `HASH_IDENTITY` | By default, the identity will be hashed to prevent PII use. You can change the configuration, adding `false` or `true` |
 
 Once you've done that, run the application and [open a browser](localhost:3000/)!
 
