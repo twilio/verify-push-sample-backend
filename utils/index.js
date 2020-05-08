@@ -70,8 +70,7 @@ function generateAccessToken(options) {
   const AccessToken = Twilio.jwt.AccessToken;
 
   const authyGrant = new AuthyGrant({
-    ...options,
-    serviceSid: config.TWILIO_VERIFY_SERVICE_SID
+    ...options
   });
 
   const verifyGrant = new VerifyGrant({

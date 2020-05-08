@@ -27,7 +27,9 @@ router.post("/enrollment", function(req, res, next) {
 
   const hashedIdentity = config.HASH_IDENTITY ? utils.generateSHA256(identity) : identity;
   const factorType = "push"
+  const serviceSid = config.TWILIO_VERIFY_SERVICE_SID
   let accessToken = utils.generateAccessToken({
+    serviceSid,
     identity: hashedIdentity,
     factorType,
     requireBiometrics: require_biometrics === "on",
@@ -36,7 +38,7 @@ router.post("/enrollment", function(req, res, next) {
   });
 
   const jwt = accessToken.toJwt();
-  const uri = `authy://${factorType}?token=${jwt}&serviceSid=${config.TWILIO_VERIFY_SERVICE_SID}&identity=${identity}`
+  const uri = `authy://${factorType}?token=${jwt}&serviceSid=${serviceSid}&identity=${identity}`
 
   qrcode.toDataURL(uri, function(err, url) {
     if (err) {

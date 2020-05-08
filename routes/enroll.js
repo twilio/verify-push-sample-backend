@@ -12,8 +12,10 @@ router.post("/", function(req, res, next) {
   const identityValue = req.body.identity;
   const identity = config.HASH_IDENTITY ? utils.generateSHA256(identityValue) : identityValue;
   const factorType = "push"
+  const serviceSid = config.TWILIO_VERIFY_SERVICE_SID
 
   let accessToken = utils.generateAccessToken({
+    serviceSid,
     identity,
     factorType,
     requireBiometrics: req.body.require_biometrics === "true",
@@ -26,7 +28,7 @@ router.post("/", function(req, res, next) {
 
   res.status(200).json({ 
     token: accessToken.toJwt(), 
-    serviceSid: config.TWILIO_VERIFY_SERVICE_SID, 
+    serviceSid, 
     identity,
     factorType
    });
