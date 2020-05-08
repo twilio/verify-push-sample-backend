@@ -6,7 +6,7 @@ var utils = require("../utils");
 
 var config = require("../config");
 
-/* POST returns a Signed JWT to authenticate with Verify Push API. */
+/* POST returns a Signed JWT to enroll with Verify Push API. */
 router.post("/", function(req, res, next) {
   // As best practice we encourage don't use PII, to be sure we hash the identity value
   const identityValue = req.body.identity;
@@ -14,16 +14,21 @@ router.post("/", function(req, res, next) {
   const factorType = "push"
 
   let accessToken = utils.generateAccessToken({
-    ...req.body,
     identity,
-    factorType
+    factorType,
+    requireBiometrics: req.body.require_biometrics === "true",
+    action: "create",
+    factorSid: "*"
   });
 
   res.append("Access-Control-Allow-Origin", "*");
   res.append("Access-Control-Allow-Methods", "GET,OPTIONS");
 
   res.status(200).json({ 
-    token: accessToken.toJwt()
+    token: accessToken.toJwt(), 
+    serviceSid: config.TWILIO_VERIFY_SERVICE_SID, 
+    identity,
+    factorType
    });
 });
 

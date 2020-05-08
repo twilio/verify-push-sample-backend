@@ -5,15 +5,22 @@ block content
     p Welcome to the sample backend for Verify Push, this sample has three endpoints:
     ul
         li
-            a(href="/enroll") Enroll QR Code: 
+            a(href="/enrollment") Enrollment using QR Code: 
             span Helps to generate a QR Code to be used with the Authy mobile application.
         li
             a(href="/challenge") Create Push Challenge: 
             span Helps to create a Factor Push Challenge with custom details.
         li
+            b /enroll 
+            span A POST route to generate a JWT with the required payload to create a factor with the Verify API
+        li
             b /auth 
             span A POST route to generate a JWT with the required payload to authenticate a request with the Verify API
 
+    h4 JWT Enrollment Endpoint
+    div.mt-4
+        span.badge.badge-success.mr-3 POST
+        code /enroll
     h4 JWT Authentication Endpoint
     div.mt-4
         span.badge.badge-success.mr-3 POST

@@ -6,6 +6,7 @@ function AuthyGrant(opts) {
   opts = opts || {};
 
   paths = ["/Services"];
+  action = opts.action
 
   if (opts.serviceSid) {
     paths.push(opts.serviceSid);
@@ -16,20 +17,18 @@ function AuthyGrant(opts) {
     paths.push(opts.identity);
   }
 
-  if (opts.createFactors) {
-    paths.push("Factors");
-  }
-
   if (opts.factorSid) {
-    paths.push(opts.factorSid);
-  }
-
-  if (opts.createChallenges) {
-    paths.push("Challenges");
+    paths.push("Factors");
+    if (opts.factorSid !== "*") {
+      paths.push(opts.factorSid);
+    }
   }
 
   if (opts.challengeSid) {
-    paths.push(opts.challengeSid);
+    paths.push("Challenges");
+    if (opts.challengeSid !== "*") {
+      paths.push(opts.challengeSid);
+    }
   }
 
   let resource = paths.join("/");
@@ -40,7 +39,7 @@ function AuthyGrant(opts) {
       return {
         authy_v1: [
           {
-            act: ["read", "create"],
+            act: [action],
             res: resource
           }
         ]

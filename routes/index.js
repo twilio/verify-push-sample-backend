@@ -12,13 +12,13 @@ router.get("/", function(req, res, next) {
   res.render("index", { title: "Verify Push Factor Sample Backend" });
 });
 
-/* GET enroll page. */
-router.get("/enroll", function(req, res, next) {
-  res.render("enroll", { title: "Enroll Verify Push Factor" });
+/* GET enrollment page. */
+router.get("/enrollment", function(req, res, next) {
+  res.render("enrollment", { title: "Enrollment for Verify Push Factor" });
 });
 
-/* POST enroll page. */
-router.post("/enroll", function(req, res, next) {
+/* POST enrollment page. */
+router.post("/enrollment", function(req, res, next) {
   const { identity, require_biometrics } = req.body;
 
   if (!identity) {
@@ -31,7 +31,8 @@ router.post("/enroll", function(req, res, next) {
     identity: hashedIdentity,
     factorType,
     requireBiometrics: require_biometrics === "on",
-    createFactors: true
+    action: "create",
+    factorSid: "*"
   });
 
   const jwt = accessToken.toJwt();
@@ -42,8 +43,8 @@ router.post("/enroll", function(req, res, next) {
       next(err);
     }
 
-    res.render("enroll", {
-      title: "Enroll Verify Push Factor",
+    res.render("enrollment", {
+      title: "Enrollment for Verify Push Factor",
       qr: url,
       uri,
       jwt: utils.decodeJWTPayload(jwt)

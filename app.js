@@ -6,6 +6,7 @@ var logger = require("morgan");
 var sassMiddleware = require("node-sass-middleware");
 
 var indexRouter = require("./routes/index");
+var enrollRouter = require("./routes/enroll");
 var authRouter = require("./routes/auth");
 var challengeRouter = require("./routes/challenge");
 
@@ -34,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/enroll", enrollRouter);
 app.use("/auth", authRouter);
 app.use("/challenge", challengeRouter);
 

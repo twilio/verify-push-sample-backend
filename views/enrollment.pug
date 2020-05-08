@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  
+  .row.mt-4
+    .col-md-6
+      form(action="/enrollment", method="post").form
+        +input_control("Identity", "identity", "fldIdentity")
+        +checkbox_control("Require Biometrics", "require_biometrics", "fldRequireBiometrics")
+        input(type="submit", value="Generate QR").btn.btn-primary
+
+      if uri
+        hr.my-4
+        h6 QR content
+        pre
+          = uri
+
+      if jwt
+        hr.my-4
+        h6 JWT Header
+        pre
+          = JSON.stringify(jwt.header, null, 4)
+        h6 JWT Payload
+        pre
+          = JSON.stringify(jwt.payload, null, 4)
+    .col-md-6
+      if qr
+        img(src=qr).img-fluid.mx-auto.img-thumbnail
+      else
+        img(src='images/sample-qr.png').img-fluid.mx-auto.img-thumbnail.img-opaque
