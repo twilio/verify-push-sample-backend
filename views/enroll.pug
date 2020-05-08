@@ -9,6 +9,12 @@ block content
         +checkbox_control("Require Biometrics", "require_biometrics", "fldRequireBiometrics")
         input(type="submit", value="Generate QR").btn.btn-primary
 
+      if uri
+        hr.my-4
+        h6 QR content
+        pre
+          = uri
+
       if jwt
         hr.my-4
         h6 JWT Header
