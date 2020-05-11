@@ -11,12 +11,10 @@ router.post("/", function(req, res, next) {
   // As best practice we encourage don't use PII, to be sure we hash the identity value
   const identityValue = req.body.identity;
   const identity = config.HASH_IDENTITY ? utils.generateSHA256(identityValue) : identityValue;
-  const factorType = "push"
 
   let accessToken = utils.generateAccessToken({
     ...req.body,
-    identity,
-    factorType
+    identity
   });
 
   res.append("Access-Control-Allow-Origin", "*");
