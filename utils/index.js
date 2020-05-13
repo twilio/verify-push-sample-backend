@@ -12,12 +12,11 @@ function AuthyGrant(opts) {
     paths.push(opts.serviceSid);
   }
 
-  if (opts.identity) {
-    paths.push("Entities");
-    paths.push(opts.identity);
-  }
-
   if (opts.factorSid) {
+    if (opts.identity) {
+      paths.push("Entities");
+      paths.push(opts.identity);
+    }
     paths.push("Factors");
     if (opts.factorSid !== "*") {
       paths.push(opts.factorSid);
