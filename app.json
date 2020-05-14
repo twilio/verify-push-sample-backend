@@ -3,5 +3,27 @@
     "description": "A sample for the Twilio verify SDK",
     "repository": "https://github.com/twilio/verify-push-sample-backend/tree/sfierro/ACCSEC-17782",
     "logo": "https://www.twilio.com/docs/static/company/img/logos/red/twilio-logo-red.424e0357f.png",
-    "keywords": ["node"]
-  }
+    "keywords": ["node"],
+    "env": {
+        "TWILIO_ACCOUNT_SID": {
+          "description": "A secret key for verifying the integrity of signed cookies.",
+          "required": true
+        },
+        "TWILIO_AUTH_TOKEN": {
+          "description": "The number of processes to run.",
+          "required": true
+        },
+        "TWILIO_API_KEY": {
+            "description": "The number of processes to run.",
+            "required": true
+        },
+        "TWILIO_API_SECRET": {
+            "description": "The number of processes to run.",
+            "required": true
+        },
+        "TWILIO_VERIFY_SERVICE_SID": {
+            "description": "The number of processes to run.",
+            "required": true
+        }
+      }
+}
