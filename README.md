@@ -2,6 +2,10 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
+The following project is a sample for implementing the backend needed for supporting the Authy SDK.
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/twilio/verify-push-sample-backend)
+
 # Twilio Verify Push Factor Sample Backend
 
 This sample project demonstrates how to use Twilio APIs in a Node.js web
