@@ -36,7 +36,7 @@ function AuthyGrant(opts) {
     key: "api",
     toPayload: function() {
       return {
-        authy_v1: [
+        verify_v2: [
           {
             act: [action],
             res: resource
