@@ -1,0 +1,29 @@
+{
+    "name": "Verify Sample Backend",
+    "description": "A sample for the Twilio verify SDK",
+    "repository": "https://github.com/twilio/verify-push-sample-backend",
+    "logo": "https://www.twilio.com/docs/static/company/img/logos/red/twilio-mark-red.424e0357f.png",
+    "keywords": ["node"],
+    "env": {
+        "TWILIO_ACCOUNT_SID": {
+          "description": "Your primary Twilio account identifier",
+          "required": true
+        },
+        "TWILIO_AUTH_TOKEN": {
+          "description": "Your primary Twilio account authentication token.",
+          "required": true
+        },
+        "TWILIO_API_KEY": {
+            "description": "Used to authenticate.",
+            "required": true
+        },
+        "TWILIO_API_SECRET": {
+            "description": "Used to authenticate.",
+            "required": true
+        },
+        "TWILIO_VERIFY_SERVICE_SID": {
+            "description": "The service sid created in the Verify console.",
+            "required": true
+        }
+      }
+}
