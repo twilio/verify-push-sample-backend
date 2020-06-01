@@ -2,7 +2,7 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
-The following project is a sample for implementing the backend needed for supporting the Authy SDK.
+The following project is a sample for implementing the backend needed for supporting the Verify Push SDK.
 
 # Twilio Verify Push Factor Sample Backend
 
