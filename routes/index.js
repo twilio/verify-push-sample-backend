@@ -38,7 +38,7 @@ router.post("/enrollment", function(req, res, next) {
   });
 
   const jwt = accessToken.toJwt();
-  const uri = `authy://${factorType}?token=${jwt}&serviceSid=${serviceSid}&identity=${identity}`
+  const uri = `authy://${factorType}?token=${jwt}&serviceSid=${serviceSid}&identity=${hashedIdentity}`
 
   qrcode.toDataURL(uri, function(err, url) {
     if (err) {
