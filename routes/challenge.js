@@ -26,7 +26,7 @@ router.post("/", function(req, res, next) {
     fields
   });
 
-  const promise = client.authy
+  const promise = client.verify
     .services(config.TWILIO_VERIFY_SERVICE_SID)
     .entities(hashedIdentity)
     .factors(factor_sid)
@@ -53,7 +53,7 @@ router.post("/:sid", function(req, res, next) {
 
   const client = require("twilio")(authKey, authToken);
 
-  const promise = client.authy
+  const promise = client.verify
     .services(config.TWILIO_VERIFY_SERVICE_SID)
     .entities(identity)
     .factors(factorSid)
