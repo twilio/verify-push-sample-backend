@@ -24,6 +24,10 @@
         "TWILIO_VERIFY_SERVICE_SID": {
             "description": "The service sid created in the Verify console.",
             "required": true
+        },
+        "HASH_IDENTITY": {
+          "description": "By default is true, the identity will be hashed to prevent PII. You can change the configuration, adding `false` or `true`",
+          "required": false
         }
       }
 }
