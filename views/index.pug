@@ -13,9 +13,6 @@ block content
         li
             b /enroll 
             span A POST route to generate a JWT with the required payload to create a factor with the Verify API
-        li
-            b /auth 
-            span A POST route to generate a JWT with the required payload to authenticate a request with the Verify API
 
     h4 Enrollment JWT Endpoint
     div.mt-4
@@ -28,21 +25,4 @@ block content
             dd String. Entity identifier.
             dt require_biometrics
             dd Boolean. Sets if the new Factor must require a biometric authentication for approval or denial. Coming soon
-    h4 Authentication JWT Endpoint
-    div.mt-4
-        span.badge.badge-success.mr-3 POST
-        code /auth
-    div.mt-4
-        h5 Params
-        dl
-            dt identity
-            dd String. Entity identifier. It will be sent by the Verify SDK
-            dt action
-            dd String. The action to be performed. It will be sent by the Verify SDK
-            dt serviceSid
-            dd String. The service Sid. It will be sent by the Verify SDK
-            dt factorSid
-            dd String. Optional. The factor Sid to execute the action in a specific factor or in all factors (*). It will be sent by the Verify SDK
-            dt challengeSid
-            dd String. Optional. The challenge Sid to execute the action in a specific challenge or in all challenges (*). It will be sent by the Verify SDK
             
