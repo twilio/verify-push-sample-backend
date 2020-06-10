@@ -14,24 +14,30 @@ router.post("/", function(req, res, next) {
   const factorType = "push"
   const serviceSid = config.TWILIO_VERIFY_SERVICE_SID
 
-  let accessToken = utils.generateAccessToken({
-    serviceSid,
-    identity,
-    factorType,
-    requireBiometrics: req.body.require_biometrics === "true",
-    action: "create",
-    factorSid: "*"
-  });
+  const authKey = config.TWILIO_ACCOUNT_SID;
+  const authToken = config.TWILIO_AUTH_TOKEN;
 
-  res.append("Access-Control-Allow-Origin", "*");
-  res.append("Access-Control-Allow-Methods", "GET,OPTIONS");
-
-  res.status(200).json({ 
-    token: accessToken.toJwt(), 
-    serviceSid, 
-    identity,
-    factorType
-   });
+  const client = require("twilio")(authKey, authToken);
+  var opts = {factorType};
+  const promise = client.verify
+    .services(serviceSid)
+    .entities(identity)
+    .accessTokens.create(opts);
+  promise
+    .then(accessToken => {
+      res.status(200).send({ 
+        token: accessToken.token, 
+        serviceSid, 
+        identity,
+        factorType
+       });
+    
+    })
+    .catch(err => {
+      console.log(err);
+      res.setHeader('Content-Type', 'application/json');
+      res.status(err.status).send(JSON.stringify(err, ["status", "message", "moreInfo", "code"]));
+    });
 });
 
 module.exports = router;
