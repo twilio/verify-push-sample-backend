@@ -9,6 +9,7 @@ var indexRouter = require("./routes/index");
 var enrollRouter = require("./routes/enroll");
 var authRouter = require("./routes/auth");
 var challengeRouter = require("./routes/challenge");
+var webhookRouter = require("./routes/webhook");
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use("/", indexRouter);
 app.use("/enroll", enrollRouter);
 app.use("/auth", authRouter);
 app.use("/challenge", challengeRouter);
+app.use("/webhook", webhookRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

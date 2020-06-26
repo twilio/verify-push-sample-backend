@@ -13,7 +13,7 @@ router.post("/", function(req, res, next) {
   res.append("Access-Control-Allow-Origin", "*");
   res.append("Access-Control-Allow-Methods", "GET,OPTIONS");
 
-  res.status(200).json({ 
+  res.status(200).json({
     token: accessToken.toJwt()
    });
 });

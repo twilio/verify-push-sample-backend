@@ -18,20 +18,19 @@ router.post("/", function(req, res, next) {
   const authToken = config.TWILIO_AUTH_TOKEN;
 
   const client = require("twilio")(authKey, authToken);
-  var opts = {factorType};
+  var opts = {factorType, identity};
   const promise = client.verify
     .services(serviceSid)
-    .entities(identity)
     .accessTokens.create(opts);
   promise
     .then(accessToken => {
-      res.status(200).send({ 
-        token: accessToken.token, 
-        serviceSid, 
+      res.status(200).send({
+        token: accessToken.token,
+        serviceSid,
         identity,
         factorType
        });
-    
+
     })
     .catch(err => {
       console.log(err);
