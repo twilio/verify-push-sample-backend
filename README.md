@@ -49,7 +49,7 @@ make sure to save this information in a secure location, or possibly your `~/.ba
 You will need to create a Verify Service.
 
 * Configure or select a [Notify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-or-select-a-notify-service) 
-* Configure a [Verify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-a-verify-service
+* Configure a [Verify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-a-verify-service)
 
 | Config Value                | Where to get one.                                                                                                      |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
