@@ -116,5 +116,5 @@ ngrok http 3000
 ## Meta
 
 - No warranty expressed or implied. Software is as is. Diggity.
-- [MIT License](http://www.opensource.org/licenses/mit-license.html)
+- [Apache License 2.0](LICENSE)
 - Lovingly crafted by Twilio
