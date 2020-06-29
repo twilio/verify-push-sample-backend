@@ -48,33 +48,8 @@ make sure to save this information in a secure location, or possibly your `~/.ba
 
 You will need to create a Verify Service.
 
-#### Create a Notify service
-You will need a notify service to send push notifications to your app
-* Go to [Push Credentials](https://www.twilio.com/console/notify/credentials)
-* Click the `Add (+)` button 
-* Enter a friendly name
-* Select `FCM push credentials` as type
-* Enter the `FCM Secret`. The value is the app's `Server key`. You can find it in your app's Firebase project settings, Cloud messaging
-* Click the `Create` button
-* Go to [Notify Services](https://www.twilio.com/console/notify/services)
-* Create a `Notify service` for the app
-* For `FCM CREDENTIAL SID`, select the created FCM credential
-* Save changes
-* Copy the notify service sid
-
-#### Create a verify service
-* Get your account Sid and Auth Token from [API credentials](https://www.twilio.com/console/project/settings)
-* Use the created notify service in the step above
-* Create a verify service calling the endpoint:
-```
-curl -X POST https://verify.twilio.com/v2/Services \
---form 'FriendlyName=Your service name' \
---form 'Push={
-    "notify_service_sid": "IS00000000000000000000000000000000"
-  }' \
--u ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token
-```
-* Copy the verify service Sid, it is the `sid` field in the response
+* Configure or select a [Notify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-or-select-a-notify-service) 
+* Configure a [Verify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-a-verify-service
 
 | Config Value                | Where to get one.                                                                                                      |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
