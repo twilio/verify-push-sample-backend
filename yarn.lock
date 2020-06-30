@@ -2200,10 +2200,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twilio@^3.46.0:
-  version "3.46.0"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.46.0.tgz#ad5c7e65b64ac6a2962f7c4400205a39ae9483b6"
-  integrity sha512-A/BLN9Ml0+eQZ/cmeOG2AuTqUcP/berxooVturbDNt6LWr89xko2rUr32o3M/tEmOeWYqDw+VEngDlP3XatvIQ==
+twilio@juliancantillo/twilio-node:
+  version "99.99.99"
+  resolved "https://codeload.github.com/juliancantillo/twilio-node/tar.gz/f95ed9036c3e5c41c6c1dd4db3d767cf8b32eb1d"
   dependencies:
     "@types/express" "^4.17.3"
     axios "^0.19.2"

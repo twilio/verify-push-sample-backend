@@ -29,8 +29,8 @@ router.post("/", function(req, res, next) {
   const promise = client.verify
     .services(config.TWILIO_VERIFY_SERVICE_SID)
     .entities(hashedIdentity)
-    .factors(factor_sid)
     .challenges.create({
+      factorSid: factor_sid,
       details: detailsJSONString
     });
 
@@ -44,7 +44,7 @@ router.post("/", function(req, res, next) {
     });
 });
 
-/* POST Create challenge. */
+/* POST Get challenge. */
 router.post("/:sid", function(req, res, next) {
   const { sid, factorSid, identity } = req.body;
 
@@ -56,7 +56,6 @@ router.post("/:sid", function(req, res, next) {
   const promise = client.verify
     .services(config.TWILIO_VERIFY_SERVICE_SID)
     .entities(identity)
-    .factors(factorSid)
     .challenges(sid)
     .fetch();
 

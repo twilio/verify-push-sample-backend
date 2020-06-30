@@ -23,7 +23,7 @@ in a file named `.env`. To create this file from an example template, do the fol
 Terminal.
 
 ```bash
-cp .env.example .env
+cp .env.sample .env
 ```
 
 Open `.env` in your favorite text editor and configure the following values.
@@ -46,11 +46,14 @@ make sure to save this information in a secure location, or possibly your `~/.ba
 
 ### Configuring Twilio Verify Push Factor
 
-You will need to create a Verify Service on the [Verify Service page](https://www.twilio.com/console/verify/services).
+You will need to create a Verify Service.
+
+* Configure or select a [Notify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-or-select-a-notify-service) 
+* Configure a [Verify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-a-verify-service)
 
 | Config Value                | Where to get one.                                                                                                      |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| `TWILIO_VERIFY_SERVICE_SID` | Generate one in the [Verify Console](https://www.twilio.com/console/verify/services) and put this in your `.env` file. |
+| `TWILIO_VERIFY_SERVICE_SID` | Verify service Sid. Put this in your `.env` file. |
 | `HASH_IDENTITY` | By default, the identity will be hashed to prevent PII. You can change the configuration, adding `false` or `true` |
 
 Once you've done that, run the application and [open a browser](localhost:3000/)!
@@ -79,7 +82,7 @@ Check your config values, and follow the links to the demo applications!
 
 ## Running the Sample Backend with ngrok
 
-If you are going to connect to this SDK Starter Kit with a mobile app (and you should try it out!), your phone won't be able to access localhost directly. You'll need to create a publicly accessible URL using a tool like [ngrok](https://ngrok.com/) to send HTTP/HTTPS traffic to a server running on your localhost. Use HTTPS to make web connections that retrieve a Twilio access token.
+If you are going to connect to this project with a mobile app (and you should try it out!), your phone won't be able to access localhost directly. You'll need to create a publicly accessible URL using a tool like [ngrok](https://ngrok.com/) to send HTTP/HTTPS traffic to a server running on your localhost. Use HTTPS to make web connections that retrieve a Twilio access token.
 
 ```bash
 ngrok http 3000
