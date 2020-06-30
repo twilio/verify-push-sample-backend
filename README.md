@@ -23,7 +23,7 @@ in a file named `.env`. To create this file from an example template, do the fol
 Terminal.
 
 ```bash
-cp .env.example .env
+cp .env.sample .env
 ```
 
 Open `.env` in your favorite text editor and configure the following values.
@@ -82,7 +82,7 @@ Check your config values, and follow the links to the demo applications!
 
 ## Running the Sample Backend with ngrok
 
-If you are going to connect to this SDK Starter Kit with a mobile app (and you should try it out!), your phone won't be able to access localhost directly. You'll need to create a publicly accessible URL using a tool like [ngrok](https://ngrok.com/) to send HTTP/HTTPS traffic to a server running on your localhost. Use HTTPS to make web connections that retrieve a Twilio access token.
+If you are going to connect to this project with a mobile app (and you should try it out!), your phone won't be able to access localhost directly. You'll need to create a publicly accessible URL using a tool like [ngrok](https://ngrok.com/) to send HTTP/HTTPS traffic to a server running on your localhost. Use HTTPS to make web connections that retrieve a Twilio access token.
 
 ```bash
 ngrok http 3000
