@@ -2,7 +2,7 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
-The following project is a sample for implementing the backend needed for supporting the Verify Push SDK.
+This project provides a sample backend to use instead of your own app backend to build a basic Verify Push implementation as explained in the [Verify Push Quickstart](https://www.twilio.com/docs/verify/quickstarts/push-android). The sample backend is also designed to be used with the [sample app](https://github.com/twilio/twilio-verify-android/blob/master/README.md#UsingSampleApp) 
 
 # Twilio Verify Push Factor Sample Backend
 
