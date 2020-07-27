@@ -5,8 +5,6 @@ var router = express.Router();
 
 var utils = require("../utils");
 
-var config = require("../config");
-
 /* GET home page. */
 router.get("/", function(req, res, next) {
   res.render("index", { title: "Verify Push Factor Sample Backend" });
@@ -25,33 +23,25 @@ router.post("/enrollment", function(req, res, next) {
     next(new Error("Identity param is required"));
   }
 
-  const hashedIdentity = config.HASH_IDENTITY ? utils.generateSHA256(identity) : identity;
-  const factorType = "push"
-  const serviceSid = config.TWILIO_VERIFY_SERVICE_SID
-  let accessToken = utils.generateAccessToken({
-    serviceSid,
-    identity: hashedIdentity,
-    factorType,
-    requireBiometrics: require_biometrics === "on",
-    action: "create",
-    factorSid: "*"
-  });
-
-  const jwt = accessToken.toJwt();
-  const uri = `authy://${factorType}?token=${jwt}&serviceSid=${serviceSid}&identity=${hashedIdentity}`
-
-  qrcode.toDataURL(uri, function(err, url) {
-    if (err) {
-      next(err);
-    }
-
-    res.render("enrollment", {
-      title: "Enrollment for Verify Push Factor",
-      qr: url,
-      uri,
-      jwt: utils.decodeJWTPayload(jwt)
+  let promise = utils.generateAccessToken(identity);
+  promise
+    .then(accessToken => {
+      const uri = `authy://${accessToken.factorType}?token=${accessToken.token}&serviceSid=${accessToken.serviceSid}&identity=${accessToken.identity}`
+      qrcode.toDataURL(uri, function(err, url) {
+        if (err) {
+          next(err);
+        }
+        res.render("enrollment", {
+          title: "Enrollment for Verify Push Factor",
+          qr: url,
+          uri
+        });
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      next(err)
     });
-  });
 });
 
 module.exports = router;
