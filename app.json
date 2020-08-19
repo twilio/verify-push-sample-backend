@@ -14,15 +14,6 @@
           "description": "Your primary Twilio account authentication token.",
           "required": true
         },
-        "TWILIO_API_KEY": {
-            "description": "Used to authenticate.",
-            "value": "SKXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-            "required": true
-        },
-        "TWILIO_API_SECRET": {
-            "description": "Used to authenticate.",
-            "required": true
-        },
         "TWILIO_VERIFY_SERVICE_SID": {
             "description": "The service sid created in the Verify console.",
             "value": "VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",

@@ -2,7 +2,7 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
-This project provides a sample backend to use instead of your own app backend to build a basic Verify Push implementation as explained in the [Verify Push Quickstart](https://www.twilio.com/docs/verify/quickstarts/push-android). The sample backend is also designed to be used with the [sample app](https://github.com/twilio/twilio-verify-android/blob/master/README.md#UsingSampleApp) 
+This project provides a sample backend to use instead of your own app backend to build a basic Verify Push implementation as explained in the [Verify Push Quickstart](https://www.twilio.com/docs/verify/quickstarts/push-android). The sample backend is also designed to be used with the [Android sample app](https://github.com/twilio/twilio-verify-android/blob/master/README.md#UsingSampleApp) and [iOS sample app](https://github.com/twilio/twilio-verify-ios/blob/master/README.md#UsingSampleApp) 
 
 # Twilio Verify Push Factor Sample Backend
 
@@ -36,13 +36,6 @@ Every sample in the demo requires some basic credentials from your Twilio accoun
 | :------------------- | :-------------------------------------------------------------------------------------------------------------------- |
 | `TWILIO_ACCOUNT_SID` | Your primary Twilio account identifier - find this [in the console here](https://www.twilio.com/console).             |
 | `TWILIO_AUTH_TOKEN`  | Your primary Twilio account authentication token - find this [in the console here](https://www.twilio.com/console).   |
-| `TWILIO_API_KEY`     | Used to authenticate - [generate one here](https://www.twilio.com/console/dev-tools/api-keys).                        |
-| `TWILIO_API_SECRET`  | Used to authenticate - [just like the above, you'll get one here](https://www.twilio.com/console/dev-tools/api-keys). |
-
-#### A Note on API Keys
-
-When you generate an API key pair at the URLs above, your API Secret will only be shown once -
-make sure to save this information in a secure location, or possibly your `~/.bash_profile`.
 
 ### Configuring Twilio Verify Push Factor
 
