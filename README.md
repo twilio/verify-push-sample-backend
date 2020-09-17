@@ -2,13 +2,13 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
-This project provides a sample backend to use instead of your own app backend to build a basic Verify Push implementation as explained in the [Verify Push Quickstart](https://www.twilio.com/docs/verify/quickstarts/push-android). The sample backend is also designed to be used with the [Android sample app](https://github.com/twilio/twilio-verify-android/blob/master/README.md#UsingSampleApp) and [iOS sample app](https://github.com/twilio/twilio-verify-ios/blob/master/README.md#UsingSampleApp) 
+This project provides a sample backend to use instead of your own app backend to build a basic Verify Push implementation as explained in the [Verify Push Quickstart](https://www.twilio.com/docs/verify/quickstarts/push-android). The sample backend is also designed to be used with the [Android sample app](https://github.com/twilio/twilio-verify-android/blob/main/README.md#UsingSampleApp) and [iOS sample app](https://github.com/twilio/twilio-verify-ios/blob/main/README.md#UsingSampleApp) 
 
 # Twilio Verify Push Factor Sample Backend
 
 You can deploy to Heroku or create your own backend.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/twilio/verify-push-sample-backend)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/twilio/verify-push-sample-backend/tree/main)
 
 This sample project demonstrates how to use Twilio APIs in a Node.js web
 application. Once the app is up and running, check out [the home page](http://localhost:3000)
