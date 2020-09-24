@@ -1,3 +1,8 @@
+// Copyright Twilio, inc. 2020. All Rights Reserved.
+// Node module: verify-push-sample-backend',
+// This file is licensed under the Apache License 2.0.
+// License text available at https://github.com/twilio/verify-push-sample-backend/blob/main/LICENSE
+
 var crypto = require("crypto");
 var config = require("../config");
 
