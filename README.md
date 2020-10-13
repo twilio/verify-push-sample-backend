@@ -41,8 +41,12 @@ Every sample in the demo requires some basic credentials from your Twilio accoun
 
 You will need to create a Verify Service.
 
-* Configure or select a [Notify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-or-select-a-notify-service) 
-* Configure a [Verify Service](https://www.twilio.com/docs/verify/quickstarts/push-android#configure-a-verify-service)
+* Configure or select a Push Credential
+  * Android: https://www.twilio.com/docs/verify/quickstarts/push-android#create-a-push-credential
+  * iOS: https://www.twilio.com/docs/verify/quickstarts/push-ios#create-a-push-credential
+* Configure a Verify Service
+  * Android: https://www.twilio.com/docs/verify/quickstarts/push-android#create-a-verify-service-and-add-the-push-credential
+  * iOS: https://www.twilio.com/docs/verify/quickstarts/push-ios#create-a-verify-service-and-add-the-push-credential
 
 | Config Value                | Where to get one.                                                                                                      |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
