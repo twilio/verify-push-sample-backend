@@ -26,17 +26,13 @@ router.post("/", function(req, res, next) {
 
   const client = require("twilio")(authKey, authToken);
 
-  const detailsJSONString = JSON.stringify({
-    message,
-    fields
-  });
-
   const promise = client.verify
     .services(config.TWILIO_VERIFY_SERVICE_SID)
     .entities(hashedIdentity)
     .challenges.create({
       factorSid: factor_sid,
-      details: detailsJSONString
+      'details.message': message,
+      'details.fields': fields
     });
 
   promise

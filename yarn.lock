@@ -65,7 +65,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.0.tgz#7d4411bf5157339337d7cff864d9ff45f177b499"
   integrity sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
 
-"@types/qs@*":
+"@types/qs@*", "@types/qs@6.9.4":
   version "6.9.4"
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.4.tgz#a59e851c1ba16c0513ea123830dd639a0a15cb6a"
   integrity sha512-+wYo+L6ZF6BMoEjtf8zB2esQsqdV6WsjRK/GP9WOgLPrq87PbNWgIxS76dS5uvl/QXtHGakZmwTznIfcPXcKlQ==
@@ -2020,12 +2020,13 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twilio@^3.48.0:
-  version "3.49.0"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.49.0.tgz#4c2caa9fb9f293c4535fb8e87c4bbe4ee928f11c"
-  integrity sha512-XuWny4sqj92ch3dQhC6WhGcPSODOOFd3fgkYocSi5j59Rq1DwAxGL4b9MgM5to4CbrGlm4Qr4gaxffiQsRfyEQ==
+twilio@^3.50.0:
+  version "3.50.0"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.50.0.tgz#134a6faa86563013702f1669bcae5f6f228aebf9"
+  integrity sha512-h/eWbi8YxdSBE6YgNfBHSDAYEhGUqGBrfqpaz4SF87MJQvygwSlfRvNA7WMajblQFP7Y68JqR20FFOjcYV3KJg==
   dependencies:
     "@types/express" "^4.17.7"
+    "@types/qs" "6.9.4"
     axios "^0.19.2"
     dayjs "^1.8.29"
     jsonwebtoken "^8.5.1"
