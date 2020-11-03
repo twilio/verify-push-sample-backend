@@ -9,6 +9,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var sassMiddleware = require("node-sass-middleware");
+var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var accessTokensRouter = require("./routes/accessTokens");
@@ -30,6 +31,7 @@ app.use(
   })
 );
 
+app.use(cors());
 app.use(logger("dev"));
 
 app.locals.env = process.env;
