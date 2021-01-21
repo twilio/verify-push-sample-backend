@@ -6,9 +6,18 @@ This project provides a sample backend to use instead of your own app backend to
 
 # Twilio Verify Push Factor Sample Backend
 
-You can deploy to Heroku or create your own backend.
+---
+**NOTE**
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/twilio/verify-push-sample-backend/tree/main)
+The endpoint that provides access tokens should NOT be used in a production environment. This backend supports seamlessly getting started with the sample app, and while convenient, the provided endpoints are not secure enough for production environments. You should use an authentication provider to securely provide access tokens to your client applications.
+
+---
+
+**NOTE**
+
+We recommend you to [request a Secondary Token](https://www.twilio.com/console/project/settings) for this sample backend and after your tests are finished, delete the token
+
+---
 
 This sample project demonstrates how to use Twilio APIs in a Node.js web
 application. Once the app is up and running, check out [the home page](http://localhost:3000)
@@ -16,7 +25,7 @@ to see which demos you can run.
 
 Let's get started!
 
-## Configure the sample application
+## Configure the sample backend
 
 To run the application, you'll need to gather your Twilio account credentials and configure them
 in a file named `.env`. To create this file from an example template, do the following in your
@@ -75,15 +84,19 @@ yarn start
 
 Your application should now be running at [http://localhost:3000/](http://localhost:3000/).
 
-Check your config values, and follow the links to the demo applications!
+Check your config values, and follow the links to the sample apps!
 
-## Running the Sample Backend with ngrok
+## Running the Sample Backend for mobile apps
 
 If you are going to connect to this project with a mobile app (and you should try it out!), your phone won't be able to access localhost directly. You'll need to create a publicly accessible URL using a tool like [ngrok](https://ngrok.com/) to send HTTP/HTTPS traffic to a server running on your localhost. Use HTTPS to make web connections that retrieve a Twilio access token.
 
 ```bash
 ngrok http 3000
 ```
+
+You can deploy to Heroku or create your own backend.
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/twilio/verify-push-sample-backend/tree/main)
 
 ## Meta
 
